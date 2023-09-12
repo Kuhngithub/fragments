@@ -112,7 +112,6 @@
     "ms": "^2.1.2",
     "natural-compare": "^1.4.0",
     "negotiator": "^0.6.3",
-    "nodemon": "^3.0.1",
     "nopt": "^1.0.10",
     "normalize-path": "^3.0.0",
     "object-assign": "^4.1.1",
@@ -180,11 +179,15 @@
   },
   "devDependencies": {
     "eslint": "^8.49.0",
+    "nodemon": "^3.0.1",
     "prettier": "3.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --config .eslintrc.js \"./src/**/*.js\""
+    "lint": "eslint --config .eslintrc.js \"./src/**/*.js\"",
+    "start": "node src/server.js",
+    "dev": "LOG_LEVEL=debug ./node_modules/.bin/nodemon ./src/server.js --watch src",
+    "debug": "LOG_LEVEL=debug nodemon --inspect=0.0.0.0:9229 ./src/server.js --watch src"
   },
   "repository": {
     "type": "git",
