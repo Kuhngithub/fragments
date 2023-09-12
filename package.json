@@ -5,12 +5,18 @@
   "description": "Fragments back-end API",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --config .eslintrc.js \"./src/**/*.js\""
+    "lint": "eslint --config .eslintrc.js \"./src/**/*.js\"",
+    "start": "node src/server.js",
+    "dev": "LOG_LEVEL=debug nodemon ./src/server.js --watch src",
+    "debug": "LOG_LEVEL=debug nodemon --inspect=0.0.0.0:9229 ./src/server.js --watch src"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kuhngithub/fragments.git"
   },
   "author": "Olakunle Olatunji",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
