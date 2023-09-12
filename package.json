@@ -132,7 +132,6 @@
     "path-to-regexp": "^0.1.7",
     "picomatch": "^2.3.1",
     "prelude-ls": "^1.2.1",
-    "prettier": "^3.0.3",
     "proxy-addr": "^2.0.7",
     "pstree.remy": "^1.1.8",
     "punycode": "^2.3.0",
@@ -177,7 +176,9 @@
     "yallist": "^4.0.0",
     "yocto-queue": "^0.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "3.0.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
