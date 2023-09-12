@@ -1,21 +1,16 @@
 {
   "name": "fragments",
-  "version": "1.0.0",
-  "description": "Private fragment repo",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Fragments back-end API",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --config .eslintrc.js \"./src/**/*.js\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.49.0",
-    "prettier": "3.0.3"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuhngithub/fragments.git"
   },
-  "dependencies": {
-    "pino": "^8.15.1",
-    "pino-http": "^8.5.0",
-    "pino-pretty": "^10.2.0"
-  }
+  "author": "Olakunle Olatunji",
+  "license": "UNLICENSED"
 }
