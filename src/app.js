@@ -68,3 +68,17 @@ app.use((err, req, res, next) => {
 
 // Export our `app` so we can access it in server.js
 module.exports = app;
+
+// modifications to src/app.js
+const passport = require('passport');
+const authenticate = require('./auth');
+
+// Use gzip/deflate compression middleware
+app.use(compression());
+
+// Set up our passport authentication middleware
+passport.use(authenticate.strategy());
+app.use(passport.initialize());
+
+// Define our routes
+app.use('/', require('./routes'));
