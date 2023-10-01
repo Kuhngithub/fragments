@@ -80,6 +80,8 @@
     "has-proto": "^1.0.1",
     "has-symbols": "^1.0.3",
     "helmet": "^7.0.0",
+    "http-auth": "^4.2.0",
+    "http-auth-passport": "^1.0.7",
     "http-errors": "^2.0.0",
     "iconv-lite": "^0.4.24",
     "ignore": "^5.2.4",
@@ -184,12 +186,16 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^8.49.0",
+    "jest": "^29.7.0",
     "nodemon": "^3.0.1",
-    "prettier": "3.0.3"
+    "prettier": "3.0.3",
+    "supertest": "^6.3.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --config .eslintrc.js \"./src/**/*.js\"",
+    "test:watch": "jest -c jest.config.js --runInBand --watch --",
+    "test": "jest -c jest.config.js --runInBand --",
+    "coverage": "jest -c jest.config.js --runInBand --coverage",
+    "lint": "eslint --config .eslintrc.js \"./src/**/*.js\" \"tests/**/*.js\"",
     "start": "node src/index.js",
     "dev": "cross-env LOG_LEVEL=debug ./node_modules/.bin/nodemon ./src/index.js --watch src",
     "debug": "cross-env LOG_LEVEL=debug nodemon --inspect=0.0.0.0:9229 ./src/index.js --watch src"
