@@ -1,15 +1,13 @@
-// tests/unit/app.test.js
 const request = require('supertest');
-const app = require('../../src/app'); 
 
-describe('404 handler', () => {
-  it('should return a 404 error for non-existent routes', async () => {
-    const res = await request(app)
-      .get('/nonexistentroute') 
-      .send();
+const app = require('../../src/app');
 
-    expect(res.status).toBe(404);
-    expect(res.body).toEqual({
+
+describe('404 Handler', () => {
+  test('should return a 404 error for a non-existent route', async () => {
+    const response = await request(app).get('/non-existent-route');
+    expect(response.status).toBe(404);
+    expect(response.body).toEqual({
       status: 'error',
       error: {
         message: 'not found',
