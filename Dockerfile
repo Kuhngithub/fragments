@@ -43,3 +43,11 @@ COPY ./tests/.htpasswd ./tests/.htpasswd
 
 # Run the server
 CMD npm start
+
+
+FROM python:3.9
+WORKDIR /app
+COPY ./src/requirements.txt .
+RUN pip install -r requirements.txt
+COPY src src
+CMD ["python", "my_app.py"]
