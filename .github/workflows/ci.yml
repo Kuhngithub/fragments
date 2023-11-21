@@ -98,14 +98,3 @@ jobs:
             true
             # Use 3 tags :sha-sha-7d821bd14e0d6c381dc57a5369ae1a3a9220664f, :main, and :latest
           tags: ${{ env.DOCKERHUB_REPO }}:${{ env.SHA_TAG }}, ${{ env.DOCKERHUB_REPO }}:main, ${{ env.DOCKERHUB_REPO }}:latest
-
-      - name:
-          Install node dependencies and run Tests
-          # There are two ways we could do this:
-          #
-          # 1. Call `npm ci` followed by `npm test` like so (NOTE: the use of | and -):
-
-          #
-          # 2. Use `install-ci-test` to do it in a single command, see https://docs.npmjs.com/cli/v8/commands/npm-install-ci-test
-          # run: npm install-ci-test
-        run: npm install-ci-test
